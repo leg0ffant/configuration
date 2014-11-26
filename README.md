@@ -170,15 +170,35 @@ Dépendance kf5 dans le repo officiel
 
 Installation du bureau plasma via AUR:
 
-    sudo yaourt -S plasma-desktop
+    sudo pacman -S plasma-next
 
 Gestionnaire de session et activation au démarrage SDDM pour [KD5 plasma](https://wiki.archlinux.org/index.php/SDDM)
 
+
     pacman -S sddm
     systemctl enable sddm
+
+Créer un nouveau fichier de configuration en root `sudo su`
+
+    sddm --example-config > /etc/sddm.conf
+
+Le theme d'origine fait mal aux yeux: remplacer par [Archlinuxtheme SDDM](https://github.com/absturztaube/sddm-archlinux-theme)
+
+    sudo yaourt -S sddm-archlinux-theme-git
+    sudo nano /etc/sddm.conf
+    [theme]
+    Current=archlinux
 
 Edition du fichier `~/.initrc` pour xinit session:
 
     exec startkde
 
 On peut trouver des thèmes pour le bureau plasma sur [KDE-LOOK](http://kde-look.org/index.php?xsortmode=down&page=0&xcontentmode=76) et également sur [Deviant Art](http://kde-users.deviantart.com/). Pour aller plus loins et remplacer le bureau Plasma par [Be::shell](http://be-desk.deviantart.com/)
+
+Installation de complément de kdebase & traduction française:
+
+    sudo pacman -S  	archlinux-wallpaper kde-wallpapers kdebase-dolphin kdebase-konqueror kdebase-konsole kdebase-kwrite kde-l10n-fr
+
+Installation de terminal alternatif [yakuake](https://wiki.archlinux.org/index.php/Yakuake) déroulant:
+
+    sudo pacman -S yakuake
