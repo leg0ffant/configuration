@@ -202,3 +202,27 @@ Installation de complément de kdebase & traduction française:
 Installation de terminal alternatif [yakuake](https://wiki.archlinux.org/index.php/Yakuake) déroulant:
 
     sudo pacman -S yakuake
+
+Activation de [networkManager](https://wiki.archlinux.org/index.php/NetworkManager) et configuration plugins VPN:
+
+    sudo systemctl disable dhcpcd && sudo systemctl enable NetworkManager
+    sudo pacman -S networkmanager-openvpn
+
+### Application sous KDE
+
+En fonction des besoins trier les applications du groupe [KDE-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) 
+
+    sudo pacman -S kde-meta-kdeplasma-addons kde-meta-kdeadmin kde-meta-kdenetwork kde-meta-kdeutils kde-meta-kdegraphics kdewebdev-kommander kdesdk-dolphin-plugins kdesdk-kapptemplate kdesdk-lokalize kdesdk-okteta kdepim-akregator
+
+Firewalll avec [PeerGuardianLinux](http://sourceforge.net/projects/peerguardian/)
+
+    sudo yaourt -S pgl
+
+Application multimedia & prise de note KDE
+
+* BasKet ( prise de note )
+* Amarok ( Music player )
+* Akregator ( flux RSS )
+
+   sudo pacman -S basket amarok
+
